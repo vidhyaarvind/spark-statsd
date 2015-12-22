@@ -31,7 +31,7 @@ addSbtPlugin("com.eed3si9n" % "sbt-unidoc" % "0.3.1")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-pgp" % "0.8")
 
-addSbtPlugin("org.spark-packages" % "sbt-spark-package" % "0.2.0")
+addSbtPlugin("org.spark-packages" % "sbt-spark-package" % "0.2.3")
 
 libraryDependencies += "org.ow2.asm"  % "asm" % "5.0.3"
 

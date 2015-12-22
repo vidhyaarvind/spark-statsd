@@ -7,7 +7,24 @@ organization := "spark.metrics"
 
 scalaVersion := "2.10.4"
 
-libraryDependencies += "org.apache.spark" %% "spark-core" % "1.3.0" % "provided"
+sparkVersion := "1.5.2"
+
+//sparkComponents += "core"
+
+spName := "vidhyaarvind/spark-statsd"
+
+spShortDescription := "Statsd metrics reporter for spark"
+
+spDescription := """Statsd metrics reporter for spark.
+                   |Helps spark to push metrics to statsd. See ReadMe for more details""".stripMargin
+
+licenses += "Apache-2.0" -> url("http://opensource.org/licenses/Apache-2.0")
+
+spAppendScalaVersion := true
+
+spIncludeMaven := true
+
+credentials += Credentials(Path.userHome / ".ivy2" / ".sbtcredentials")
 
 resolvers += "Bintray" at "https://dl.bintray.com/readytalk/maven"
 
@@ -34,6 +51,12 @@ assemblyMergeStrategy in assembly := {
         }
     }
 
+publishMavenStyle := true
+
+publishArtifact in Test := false
+
+pomIncludeRepository := { _ => false }
+
 pomExtra := (
   <url>https://github.com/vidhyaarvind/spark-statsd</url>
   <licenses>
@@ -54,5 +77,3 @@ pomExtra := (
       <url>https://github.com/vidhyaarvind</url>
     </developer>
   </developers>)
-
-
